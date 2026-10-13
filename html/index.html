@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>len_ticketsystem</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="player-ui" class="screen hidden">
+  <div class="glass modal">
+    <button class="icon-btn close-x" data-close><span data-icon="x"></span></button>
+    <div class="modal-head">
+      <div class="badge"><span data-icon="headset"></span></div>
+      <div>
+        <h2 data-i18n="ui_player_title"></h2>
+        <p data-i18n="ui_player_sub"></p>
+      </div>
+    </div>
+    <div class="notice">
+      <div class="notice-tag"><span data-icon="alert"></span> <span data-i18n="ui_notice_title"></span></div>
+      <p data-i18n="ui_notice_text"></p>
+      <div class="pills">
+        <span><i data-icon="bug"></i><b data-i18n="ui_reason_1"></b></span>
+        <span><i data-icon="bug"></i><b data-i18n="ui_reason_2"></b></span>
+        <span><i data-icon="gavel"></i><b data-i18n="ui_reason_3"></b></span>
+        <span><i data-icon="help"></i><b data-i18n="ui_reason_4"></b></span>
+      </div>
+      <p class="notice-foot" data-i18n="ui_notice_foot"></p>
+    </div>
+    <form id="ticket-form">
+      <label><span data-icon="ticket"></span><span data-i18n="ui_subject"></span></label>
+      <input id="t-subject" autocomplete="off" data-i18n-ph="ui_subject_ph">
+      <label><span data-icon="chat"></span><span data-i18n="ui_message"></span> *</label>
+      <textarea id="t-message" rows="5" data-i18n-ph="ui_message_ph" required></textarea>
+      <button type="submit" class="btn primary block"><span data-icon="send"></span><span data-i18n="ui_submit"></span></button>
+    </form>
+  </div>
+</div>
+
+<div id="admin-ui" class="screen hidden">
+  <div class="glass admin-panel">
+    <aside class="side">
+      <div class="brand"><span class="ic accent" data-icon="shield"></span><span data-i18n="ui_admin_title"></span></div>
+      <label class="duty">
+        <div>
+          <b><span class="ic sm" data-icon="power"></span><span data-i18n="ui_duty"></span></b>
+          <small id="duty-label"></small>
+        </div>
+        <input type="checkbox" id="duty-toggle">
+        <span class="switch"></span>
+      </label>
+      <h4><span class="ic sm" data-icon="users"></span><span data-i18n="ui_team"></span></h4>
+      <ul id="team-list" class="team"></ul>
+    </aside>
+    <section class="main">
+      <header class="main-head">
+        <h3><span class="ic" data-icon="ticket"></span><span data-i18n="ui_tickets"></span></h3>
+        <div class="stats" id="stats"></div>
+      </header>
+      <div class="content">
+        <div id="ticket-list" class="list"></div>
+        <div id="detail" class="detail"></div>
+      </div>
+    </section>
+    <button class="icon-btn close-x" data-close><span data-icon="x"></span></button>
+  </div>
+</div>
+
+<div id="chat-ui" class="screen hidden">
+  <div class="glass chat">
+    <header class="chat-head">
+      <div class="chat-title">
+        <span class="chat-ic"><span data-icon="chat"></span></span>
+        <div>
+          <h3 data-i18n="ui_chat_title"></h3>
+          <small data-i18n="ui_chat_sub"></small>
+        </div>
+      </div>
+      <button class="icon-btn" data-close><span data-icon="x"></span></button>
+    </header>
+    <div id="chat-msgs" class="msgs"></div>
+    <div class="chat-input">
+      <input id="chat-input" autocomplete="off" data-i18n-ph="ui_chat_ph">
+      <button id="chat-send" class="btn primary"><span data-icon="send"></span></button>
+    </div>
+  </div>
+</div>
+
+<div id="notify" class="notify top-right"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
